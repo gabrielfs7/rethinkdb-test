@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  rethinkdb_chat:
+    container_name: rethinkdb
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    image: rethinkdb_chat
+    ports:
+      - '28015:28015'
+    restart: always
+    volumes:
+      - rethinkdb_chat_volume:/var/www/html/
+    networks:
+      - rethinkdb_chat_network
+networks:
+  rethinkdb_chat_network:
+    name: rethinkdb_chat_network
+
+volumes:
+  rethinkdb_chat_volume:
