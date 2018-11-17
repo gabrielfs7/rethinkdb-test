@@ -1,8 +1,6 @@
-// A fork of the [node.js chat app](https://github.com/eiriksm/chat-test-2k)
-// by [@orkj](https://twitter.com/orkj) using socket.io, rethinkdb, passport and bcrypt on an express app.
-//
-// See the [GitHub README](https://github.com/rethinkdb/rethinkdb-example-nodejs-chat/blob/master/README.md)
-// for details of the complete stack, installation, and running the app.
+/**
+ * Load node libs
+ */
 var express = require('express')
   , app = express()
   , cookieParser = require('cookie-parser')
