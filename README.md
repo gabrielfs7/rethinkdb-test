@@ -1,12 +1,6 @@
-# What is it #
+# Chat with RethinkDb + Node.js + Socket.io + Express
 
-A fork of the [node.js chat app](https://github.com/eiriksm/chat-test-2k) by [@orkj](https://twitter.com/orkj) 
-using socket.io, rethinkdb, passport and bcrypt on an express app.
-
-<div><strong><h4>Note:</h4> This is an example application. Even though it shows an example of how to integrate Passport and bcrypt, you shouldn't assume it is free from security vulnerabilities. Have the code audited carefully by an expert before you put anything modeled on it into production.</strong></div>
-
-
-# Complete stack #
+Simple chat test based on [rethinkdb/rethinkdb-example-nodejs-chat](https://github.com/rethinkdb/rethinkdb-example-nodejs-chat)
 
 * [node.js](http://nodejs.org)
 * [socket.io](http://socket.io)
@@ -15,40 +9,45 @@ using socket.io, rethinkdb, passport and bcrypt on an express app.
 * [debug](https://github.com/visionmedia/debug)
 * [RethinkDB](http://www.rethinkdb.com/)
 
-# Installation #
+# Installation
+
+Clone the project and execute: 
 
 ```
-git clone git@github.com:rethinkdb/rethinkdb-example-nodejs-chat.git
-cd rethinkdb-example-nodejs-chat && npm install
+npm install
 ```
 
-_Note_: If you don't have RethinkDB installed, you can follow [these instructions to get it up and running](http://www.rethinkdb.com/docs/install/). 
+Run composer:
 
+```
+docker-compose up -d
+```
 
-# Running the application #
-
-Running the app is as simple as:
+# To run the application
 
 ```
 node app
 ```
-
 Then open a browser: <http://localhost:8000>.
 
-_Note_: If you want to override the default RethinkDB connection details, you can
-specify them as environment variables:
+### To override RethinkDb configuration
 
-* `RDB_HOST`: the RethinkDB host (default: `localhost`)
-* `RDB_PORT`: the port (default `28015`)
-* `RDB_DB`: the app database (default: `chat`)
+Specify them as environment variables:
 
-If you want to enable logging for the database queries (see [debug docs](https://github.com/visionmedia/debug)
-for more configuration options:
+* `RDB_HOST` (default: `localhost`)
+* `RDB_PORT` (default `28015`)
+* `RDB_DB` (default: `chat`)
+
+### To enable logging for DB queries
 
 ```
 DEBUG=rdb:* node app
 ```
 
-# License #
+For more configuration options: (see [debug docs](https://github.com/visionmedia/debug)
 
-This demo application is licensed under the MIT license: <http://opensource.org/licenses/mit-license.php>
+# Execute standard checks
+ 
+ ```
+node test
+```
