@@ -1,10 +1,15 @@
+/* global io */
+
 var socket = io.connect()
 socket.emit('iamhere', document.getElementById('name').value)
 socket.on('new message', function (data) {
-  var id = new Date().getTime()
   document.getElementById('messages').innerHTML += makeChatRow(data)
+
   var div = document.getElementById('messages')
-  setTimeout(div.scrollTop = div.scrollHeight, 1)
+
+  div.scrollTop = div.scrollHeight
+
+  setTimeout(div.scrollTop, 1)
 })
 socket.on('history', function (data) {
   // Store div in variable for the loop.
@@ -15,7 +20,8 @@ socket.on('history', function (data) {
   setTimeout(div.scrollTop = div.scrollHeight, 1)
 })
 socket.on('whoshere', function (data) {
-  append = []
+  var append = []
+
   for (var i in data.users) {
     append.push('<li><a href="/user/' + data.users[i].id + '"><i class="icon-user"></i>' + data.users[i].name + '</a></li>')
   }
