@@ -136,7 +136,7 @@ app.get(
       req.user = false
     }
 
-    res.render('index', { title: 'Chat 2K', user: req.user })
+    res.render('index', { title: 'Chat', user: req.user })
   }
 )
 
