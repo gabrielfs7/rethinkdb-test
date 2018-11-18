@@ -49,5 +49,5 @@ For more configuration options: (see [debug docs](https://github.com/visionmedia
 # Execute standard checks
  
  ```
-node test
+npm run standard
 ```
