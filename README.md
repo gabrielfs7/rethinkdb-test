@@ -17,7 +17,7 @@ Clone the project and execute:
 npm install
 ```
 
-Run composer:
+Run docker-compose:
 
 ```
 docker-compose up -d
